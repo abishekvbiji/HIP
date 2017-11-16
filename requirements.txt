@@ -1,0 +1,18 @@
+Put on your coding hats and develop a Patient portal web application or an Android app. The use case is to assist the patient to register into a hospital/Clinic and book appointments. The basic features it should have are as follows
+
+● Patient Registry module wherein the patient should be able to register into the hospital’s patient record using a valid phone number. The phone no. has to be validated using an OTP sent to the patient’s registered mobile number.
+● Appointment module through which the patient can book an appointment for a doctor. Once an appointment has been booked, a google invitation has to be added to patient’s google calendar. There also needs to be a option to view all the appointments.
+
+Apart from these requirements, the teams can implement additional functionalities which will provide enhanced usability to the application.
+
+Evaluation criteria
+                                                                                                                               
+● Implementation of functionalities.
+● Creativity & Imagination
+● User Interface and Design
+● User Experience
+● Code Quality
+
+Submission criteria
+
+Teams have to provide an Abstract about the application that you have developed along with Web URL or Mobile App link and Your Project resources repository link(Eg: Github,Bitbucket etc)

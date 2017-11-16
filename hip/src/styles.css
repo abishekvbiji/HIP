@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.no-border {
+	border: none !important;
+}
+.no-padding {
+	padding: 0 !important;
+}
+.asd-logo {
+	padding: 25px 0px;
+}
+@media (max-width:1090px) {
+	.asd-logo {
+		width: 225px;
+	}	
+}
+body {
+	letter-spacing: 0.5px;
+}
+html, body {
+    margin: 0 !important;
+    height: 100% !important;
+}
+.header-ht {
+	min-height: 94px;
+}
+
+@media (max-width: 991px) {
+	.header-ht {
+		min-height: 67px;
+	}
+}
+.full-width {
+	width: 100% !important;
+}
+.align-txt-center {
+	text-align: center !important;
+}
+.align-text-left {
+	text-align: left !important;
+}
+.align-text-right {
+	text-align: right !important;
+}
+.m-t-10 {
+	margin-top: 10px !important;
+}
+.m-t-15 {
+	margin-top: 15px !important;
+}
+.m-l-10 {
+	margin-left: 10px !important;
+}
+.m-b-15 {
+	margin-bottom: 15px !important;
+}
+.m-b-30 {
+	margin-bottom: 30px !important;
+}
+.m-b-50 {
+	margin-bottom: 50px !important;
+}
+.m-t-30 {
+	margin-top: 30px !important;
+}
+.m-t-50 {
+	margin-top: 50px !important;
+}
+.p-b-50 {
+	padding-bottom: 50px !important;
+}
+.p-l-30 {
+	padding-left: 30px !important;
+}
+.p-t-10 {
+	padding-top: 10px !important;
+}
+.p-t-15 {
+	padding-top: 15px !important;
+}
+.p-l-15 {
+	padding-left: 15px !important;
+}
+.p-l-10 {
+	padding-left: 10px !important;
+}
+.p-r-10 {
+	padding-right: 10px !important;
+}
+.p-t-30 {
+	padding-top: 30px !important;
+}
+.p-b-30 {
+	padding-bottom: 30px !important;
+}
+.p-b-15 {
+	padding-bottom: 15px !important;
+}
+.p-b-10 {
+	padding-bottom: 10px !important;
+}
+.p-t-b-15{
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+}
+.p-t-b-5{
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+.p-t-b-30 {
+	padding-top: 30px !important;
+	padding-bottom: 30px !important; 
+}
+.m-t-b-30 {
+	margin-top: 30px !important;
+	margin-bottom: 30px !important; 
+}
+.m-t-b-15 {
+	margin-top: 15px !important;
+	margin-bottom: 15px !important; 
+}
+.m-t-b-10 {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important; 
+}
+.m-t-b-5 {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important; 
+}
+.start-btn-w {
+	width: 280px;
+}
+.display-flex {
+	display: flex;
+}
+.flex-vertical {
+	flex-direction: column;
+}
+.float-left {
+	float: left;
+}
+.img-bg {
+	background-repeat: no-repeat;
+    background-position: center;
+}
+.line-ht-40 {
+	line-height: 40px;
+}
+.alert-red {
+	color: #e01d25;
+	font-family: Roboto-Regular, serif;
+	font-size: 15px;
+}
+.status-tick {
+	width: 12px;
+	margin-right: 5px;
+}
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 5px solid #8e8e93;
+  border-top-color: #333;
+  animation: spinner .9s linear infinite;
+  z-index: 99999;
+}

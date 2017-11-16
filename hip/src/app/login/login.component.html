@@ -1,0 +1,100 @@
+<!-- <div class="col-md-6 col-md-offset-3">
+  <h2>Login</h2>
+  <form #f="ngForm" name="form" novalidate>
+    <div class="form-group">
+      <label for="phoneNumber">PhoneNumber</label>
+      <input type="text" class="form-control" name="PhoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" required />
+    </div>
+    <div class="form-group">
+        <label for="token">Token</label>
+        <input type="text" class="form-control" name="token" [(ngModel)]="model.token" #token="ngModel" required />
+      </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary" (click)="generateOTP()">Generate OTP</button>
+      <button [disabled]="loading" class="btn btn-primary" (click)="login()">Login</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+      />
+    </div>
+  </form>
+</div> -->
+
+
+
+
+<div class="sign-up">
+  <div *ngIf = "isToken" class="login-account">
+    <div class="full-width align-txt-center p-t-b-15">
+      <p [hidden]="forgotPassword" class="form-heading">Sign In</p>
+      <p [hidden]="!forgotPassword" class="form-heading">Forgot Password</p>
+    </div>    
+
+    <form *ngIf = "!isToken" role="form" [hidden]="forgotPassword" [formGroup]="signinForm" (ngSubmit)="generateOTP()" class="clearfix">
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <input style="background-image: url('../../../assets/img/Email.png');" class="col-xs-12 col-sm-offset-1 col-sm-10" type="text" formControlName="email" placeholder="Enter Phone Number">
+        <!-- <div *ngIf="!signinForm.controls.email.valid && submitted">
+                    <div [hidden]="!signinForm.controls.email.errors.required" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">This field is required!</div>
+                    <div [hidden]="(signinForm.controls.email.errors.required) ? true : !signinForm.controls.email.errors" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">Please enter valid email</div>
+                </div> -->
+      </div>
+      <!-- <div *ngIf = "isToken" class="form-group col-xs-12 align-txt-center m-b-30">
+        <input style="background-image: url('../../../assets/img/Password.png');" class="col-xs-12 col-sm-offset-1 col-sm-10" type="password" formControlName="password" placeholder="Enter OTP">
+        <!-- <p *ngIf="signinForm.controls.password.invalid && submitted" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">This field is required!</p>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding"> -->
+          <!-- <span class="pull-right fgt-pwd p-t-10" (click)="fgtPassword()">Forgot your password?</span> -->
+        <!-- </div>     -->
+      <!-- </div>   -->
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <button type="submit" class="create-btn col-xs-12 col-sm-offset-1 col-sm-10">Generate OTP</button>
+        <!-- <div class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding m-t-10">
+          <input type="checkbox" class="regular-checkbox pull-left p-t-10">
+            <div class="chk-txt pull-left">Stay signed in</div>
+        </div>   -->
+      </div>
+    </form>
+
+    <form *ngIf = "isToken" role="form" [hidden]="forgotPassword" [formGroup]="signinForm" (ngSubmit)="login()" class="clearfix">
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <input style="background-image: url('../../../assets/img/Email.png');" class="col-xs-12 col-sm-offset-1 col-sm-10" type="text" formControlName="phoneNumber" placeholder="Enter Phone Number">
+        <!-- <div *ngIf="!signinForm.controls.email.valid && submitted">
+                    <div [hidden]="!signinForm.controls.email.errors.required" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">This field is required!</div>
+                    <div [hidden]="(signinForm.controls.email.errors.required) ? true : !signinForm.controls.email.errors" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">Please enter valid email</div>
+                </div> -->
+      </div>
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <input style="background-image: url('../../../assets/img/Password.png');" class="col-xs-12 col-sm-offset-1 col-sm-10" type="password" formControlName="token" placeholder="Enter OTP">
+        <!-- <p *ngIf="signinForm.controls.password.invalid && submitted" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">This field is required!</p>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding"> -->
+          <!-- <span class="pull-right fgt-pwd p-t-10" (click)="fgtPassword()">Forgot your password?</span> -->
+        <!-- </div>     -->
+      </div>  
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <button type="submit" class="create-btn col-xs-12 col-sm-offset-1 col-sm-10">Submit OTP</button>
+        <!-- <div class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding m-t-10">
+          <input type="checkbox" class="regular-checkbox pull-left p-t-10">
+            <div class="chk-txt pull-left">Stay signed in</div>
+        </div>   -->
+      </div>
+    </form>
+
+    <!-- <form role="form" [hidden]="!forgotPassword" [formGroup]="forgotPwdForm" (ngSubmit)="onEmailSubmit()" class="m-t-30 clearfix">
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <input style="background-image: url('../../../assets/img/Email.png');" class="col-xs-12 col-sm-offset-1 col-sm-10" type="text" formControlName="email" placeholder="Email">
+        <div *ngIf="!forgotPwdForm.controls.email.valid && emailSubmitted">
+                    <div [hidden]="!forgotPwdForm.controls.email.errors.required" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">This field is required!</div>
+                    <div [hidden]="(forgotPwdForm.controls.email.errors.required) ? true : !forgotPwdForm.controls.email.errors" class="col-xs-12 col-sm-offset-1 col-sm-10 no-padding alert-red">Please enter valid email</div>
+                </div>
+      </div>  
+      <div class="form-group col-xs-12 align-txt-center m-b-30">
+        <button type="submit" class="create-btn col-xs-12 col-sm-offset-1 col-sm-10">SUBMIT</button>  
+      </div>
+    </form> -->
+
+  </div>
+  <div class="bottom-content" [hidden]="forgotPassword">
+    <div class="align-txt-center p-t-b-30 display-flex flex-vertical">
+      <a href="/auth/google"> 
+        <button class="col-xs-12 col-sm-offset-1 col-sm-10 cya-btn m-t-b-15">LOGIN USING GOOGLE </button>
+      </a>
+    </div>
+  </div>  
+</div>
